@@ -1088,6 +1088,11 @@ async function submitConsultation(e) {
 
     // Показуємо повідомлення користувачу
     alert('Дякуємо! Ми зателефонуємо вам найближчим часом.');
+
+    // Facebook Pixel — відстеження заявки
+    if (typeof fbq !== 'undefined') {
+        fbq('track', 'Lead');
+    }
     
     // Логуємо дані в консоль (для тестування)
     console.log('=== ДАНІ ЗАМОВЛЕННЯ ===');
